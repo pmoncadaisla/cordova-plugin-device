@@ -76,6 +76,8 @@ public class Device extends CordovaPlugin {
             r.put("manufacturer", this.getManufacturer());
 	        r.put("isVirtual", this.isVirtual());
             r.put("serial", this.getSerialNumber());
+            r.put("display", android.os.Build.DISPLAY);
+            r.put("device", android.os.Build.DEVICE);
             callbackContext.success(r);
         }
         else {
@@ -132,6 +134,8 @@ public class Device extends CordovaPlugin {
         String serial = android.os.Build.SERIAL;
         return serial;
     }
+
+
 
     /**
      * Get the OS version.
